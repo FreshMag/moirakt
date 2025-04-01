@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Francesco Magnani, Luca Rubboli,
+ * Copyright (c) 2024, Francesco Magnani
  * and all authors listed in the `build.gradle.kts` and the generated `pom.xml` file.
  *
  *  This file is part of Subjekt, and is distributed under the terms of the Apache License 2.0, as described in the
@@ -22,7 +22,7 @@ plugins {
     alias(libs.plugins.mavenPublish)
 }
 
-group = "placeholder-group"
+group = "io.github.freshmag"
 
 repositories {
     google()
@@ -65,7 +65,7 @@ kotlin {
     }
 
     js(IR) {
-        moduleName = "placeholder-module_name"
+        moduleName = "moirakt"
         browser()
         nodejs()
         binaries.library()
@@ -95,7 +95,7 @@ publishing {
     repositories {
         maven {
             name = "githubPackages"
-            url = uri("https://maven.pkg.github.com/placeholder-author/placeholder-repo")
+            url = uri("https://maven.pkg.github.com/FreshMag/moirakt")
             credentials(PasswordCredentials::class)
         }
     }
@@ -103,30 +103,30 @@ publishing {
 
 mavenPublishing {
     pom {
-        name.set("placeholder-project_name")
-        description.set("placeholder-description")
-        inceptionYear.set("placeholder-year")
-        url.set("https://github.com/placeholder-author/placeholder-repo")
+        name.set("moirakt")
+        description.set("A Kotlin Multiplatform library for calculating probability distributions.")
+        inceptionYear.set("2025")
+        url.set("https://github.com/FreshMag/moirakt")
 
         licenses {
             license {
-                name.set("placeholder-license")
-                url.set("placeholder-license_url")
+                name.set("Apache License 2.0")
+                url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
             }
         }
 
         // Specify developer information
         developers {
             developer {
-                id.set("placeholder-author")
-                name.set("placeholder-author_name")
-                email.set("<<DEVELOPER_EMAIL>>")
+                id.set("FreshMag")
+                name.set("Francesco Magnani")
+                email.set("pescomagnani@gmail.com")
             }
         }
 
         // Specify SCM information
         scm {
-            url.set("https://github.com/<<AUTHOR>>/<<REPO>>")
+            url.set("https://github.com/FreshMag/moirakt")
         }
     }
     // Enable GPG signing for all publications
@@ -146,7 +146,7 @@ detekt {
 npmPublish {
     packages {
         named("js") {
-            packageName = "<<PACKAGE_NAME>>"
+            packageName = "moirakt"
         }
     }
 
